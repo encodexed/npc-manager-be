@@ -14,7 +14,7 @@ import lombok.Setter;
 @Table(name = "NPCs")
 @Getter
 @Setter
-public class NPC {
+public class Npc {
 
   @Id
   @Nonnull
@@ -22,7 +22,6 @@ public class NPC {
   private Long id;
 
   @Column
-  @Nonnull
   private String name;
 
   @Column
