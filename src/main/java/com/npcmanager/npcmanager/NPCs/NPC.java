@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +15,7 @@ import lombok.Setter;
 @Table(name = "NPCs")
 @Getter
 @Setter
+@AllArgsConstructor
 public class Npc {
 
   @Id
@@ -76,4 +78,12 @@ public class Npc {
 
   @Column
   private String notes;
+
+  public Npc() {}
+
+  public Npc(String name, int age, String race) {
+    this.name = name;
+    this.age = age;
+    this.race = race;
+  }
 }
