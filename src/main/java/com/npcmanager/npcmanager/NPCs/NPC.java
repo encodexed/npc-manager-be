@@ -1,6 +1,5 @@
 package com.npcmanager.npcmanager.NPCs;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +18,6 @@ import lombok.Setter;
 public class Npc {
 
   @Id
-  @Nonnull
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
@@ -27,11 +25,9 @@ public class Npc {
   private String name;
 
   @Column
-  @Nonnull
   private String race;
 
   @Column
-  @Nonnull
   private int age;
 
   @Column
@@ -80,10 +76,4 @@ public class Npc {
   private String notes;
 
   public Npc() {}
-
-  public Npc(String name, int age, String race) {
-    this.name = name;
-    this.age = age;
-    this.race = race;
-  }
 }
