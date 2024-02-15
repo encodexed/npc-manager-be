@@ -3,6 +3,7 @@ package com.npcmanager.npcmanager.NPCs;
 import com.npcmanager.npcmanager.exceptions.IncompleteDataException;
 import jakarta.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class NpcService {
       (
         newNpc.getName() == null ||
         newNpc.getRace() == null ||
-        newNpc.getAge() < 0
+        !(newNpc.getAge() > 0)
       )
     ) {
       throw new IncompleteDataException(
@@ -35,5 +36,14 @@ public class NpcService {
       );
     }
     return this.npcRepository.save(newNpc);
+  }
+
+  public boolean deleteById(Long id) {
+    Optional<Npc> foundNpc = this.npcRepository.findById(id);
+    if (foundNpc.isPresent()) {
+      this.npcRepository.delete(foundNpc.get());
+      return true;
+    }
+    return false;
   }
 }
