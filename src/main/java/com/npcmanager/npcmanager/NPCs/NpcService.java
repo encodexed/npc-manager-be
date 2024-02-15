@@ -38,6 +38,11 @@ public class NpcService {
     return this.npcRepository.save(newNpc);
   }
 
+  public Optional<Npc> getById(Long id) {
+    Optional<Npc> foundNpc = npcRepository.findById(id);
+    return foundNpc;
+  }
+
   public boolean deleteById(Long id) {
     Optional<Npc> foundNpc = this.npcRepository.findById(id);
     if (foundNpc.isPresent()) {
@@ -45,5 +50,17 @@ public class NpcService {
       return true;
     }
     return false;
+  }
+
+  public Optional<Npc> updateById(Long id, NpcCreateDTO data) {
+    Optional<Npc> foundNpc = getById(id);
+    if (foundNpc.isPresent()) {
+      Npc toUpdate = foundNpc.get();
+      modelMapper.map(data, toUpdate);
+      Npc updatedNpc = this.npcRepository.save(toUpdate);
+      return Optional.of(updatedNpc);
+    }
+
+    return foundNpc;
   }
 }
