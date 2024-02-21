@@ -64,7 +64,7 @@ public class NpcController {
   @PatchMapping("/{id}")
   public ResponseEntity<Npc> updateById(
     @PathVariable Long id,
-    @Valid @RequestBody NpcCreateDTO data
+    @Valid @RequestBody NpcUpdateDTO data
   ) {
     Optional<Npc> updated = this.npcService.updateById(id, data);
 

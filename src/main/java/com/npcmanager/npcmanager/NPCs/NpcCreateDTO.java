@@ -11,7 +11,7 @@ import lombok.Setter;
 public class NpcCreateDTO {
 
   @NotBlank
-  private int age;
+  private Integer age;
 
   @NotBlank
   private String name;
@@ -21,29 +21,29 @@ public class NpcCreateDTO {
 
   private String character_class;
 
-  private int level;
+  private Integer level;
 
   private String alignment;
 
   private String backstory;
 
-  private int experience_points;
+  private Integer experience_points;
 
-  private int hit_points;
+  private Integer hit_points;
 
-  private int armor_class;
+  private Integer armor_class;
 
-  private int strength;
+  private Integer strength;
 
-  private int dexterity;
+  private Integer dexterity;
 
-  private int constitution;
+  private Integer constitution;
 
-  private int intelligence;
+  private Integer intelligence;
 
-  private int wisdom;
+  private Integer wisdom;
 
-  private int charisma;
+  private Integer charisma;
 
   private String inventory;
 

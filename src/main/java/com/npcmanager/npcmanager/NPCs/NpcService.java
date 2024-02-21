@@ -52,7 +52,7 @@ public class NpcService {
     return false;
   }
 
-  public Optional<Npc> updateById(Long id, NpcCreateDTO data) {
+  public Optional<Npc> updateById(Long id, NpcUpdateDTO data) {
     Optional<Npc> foundNpc = getById(id);
     if (foundNpc.isPresent()) {
       Npc toUpdate = foundNpc.get();
