@@ -28,7 +28,7 @@ public class NpcService {
       (
         newNpc.getName() == null ||
         newNpc.getRace() == null ||
-        !(newNpc.getAge() > 0)
+        newNpc.getAge() == null
       )
     ) {
       throw new IncompleteDataException(
@@ -61,6 +61,6 @@ public class NpcService {
       return Optional.of(updatedNpc);
     }
 
-    return foundNpc;
+    return Optional.empty();
   }
 }

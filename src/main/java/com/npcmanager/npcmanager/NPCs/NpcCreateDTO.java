@@ -1,6 +1,6 @@
 package com.npcmanager.npcmanager.NPCs;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,13 +10,13 @@ import lombok.Setter;
 @AllArgsConstructor
 public class NpcCreateDTO {
 
-  @NotBlank
+  @NotBlank(message = "Age cannot be empty.")
   private Integer age;
 
-  @NotBlank
+  @NotBlank(message = "Name cannot be empty.")
   private String name;
 
-  @NotBlank
+  @NotBlank(message = "Race cannot be empty.")
   private String race;
 
   private String character_class;

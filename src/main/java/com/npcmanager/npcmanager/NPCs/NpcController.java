@@ -3,7 +3,8 @@ package com.npcmanager.npcmanager.NPCs;
 import com.npcmanager.npcmanager.exceptions.NotFoundException;
 import java.util.List;
 import java.util.Optional;
-import javax.validation.Valid;
+
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +53,7 @@ public class NpcController {
   public ResponseEntity<Npc> deleteById(@PathVariable Long id) {
     boolean deleted = this.npcService.deleteById(id);
 
-    if (deleted == true) {
+    if (deleted) {
       return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
 
