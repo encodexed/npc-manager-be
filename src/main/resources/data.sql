@@ -12,7 +12,7 @@ CREATE TABLE npcs (
     dexterity INT,
     experience_points INT,
     hit_points INT,
-    image_url VARCHAR(255),
+    image_url VARCHAR(980),
     intelligence INT,
     inventory TEXT,
     level INT,
