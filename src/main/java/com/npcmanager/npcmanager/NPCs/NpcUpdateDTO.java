@@ -46,4 +46,6 @@ public class NpcUpdateDTO {
   private String inventory;
 
   private String notes;
+
+  private String image_url;
 }

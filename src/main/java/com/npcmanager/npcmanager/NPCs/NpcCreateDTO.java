@@ -48,4 +48,6 @@ public class NpcCreateDTO {
   private String inventory;
 
   private String notes;
+
+  private String image_url;
 }

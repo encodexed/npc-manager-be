@@ -76,4 +76,7 @@ public class Npc {
 
   @Column
   private String notes;
+
+  @Column
+  private String image_url;
 }
